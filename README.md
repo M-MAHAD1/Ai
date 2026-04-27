@@ -100,9 +100,10 @@ Before running the project, ensure you have:
 
 ### 1️⃣ Clone the Repository
 
-```bash
+bash
 git clone [https://github.com/yourusername/pak-justice-ai.git](https://github.com/yourusername/pak-justice-ai.git)
 cd pak-justice-ai
+
 2️⃣ Environment Configuration
 Create .env files in both server and chatbot folders:
 
