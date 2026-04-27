@@ -101,5 +101,48 @@ Before running the project, ensure you have:
 ### 1️⃣ Clone the Repository
 
 ```bash
+
+2️⃣ Environment ConfigurationCreate .env files in both server and chatbot folders:📁 server/.envCode snippetMONGO_URI=your_mongodb_uri
+PORT=5000
+NODE_ENV=development
+📁 chatbot/.envCode snippetGEMINI_API_KEY=your_gemini_key
+LLAMA_API_KEY=your_llama_key
+SERPER_API_KEY=your_serper_key
+CHROMA_DB_PATH=./chroma_db
+🏃 How to Run the ProjectNote: You need three separate terminals running simultaneously for the complete system to work.🖥️ Terminal 1: MongoDB Web Server (Node.js)This server manages the admin panel, authentication, and blog posts.Bashcd server
+npm install
+npm run dev
+✅ Status: Manages admin panel, authentication, and blog posts🤖 Terminal 2: Chatbot AI Engine (FastAPI)This engine handles the RAG logic, embeddings, and LLM responses.Bashcd chatbot
+
+# Activate virtual environment
+# Windows:
+venv\Scripts\activate
+
+# Mac/Linux:
+source venv/bin/activate
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Start AI engine
+python main.py
+✅ Status: Handles RAG logic, embeddings, and LLM responses🌐 Terminal 3: Frontend (React.js)This is the main user interface.Bashcd frontend
+npm install
+npm run dev
+✅ Status: User interface accessible at http://localhost:5173📊 Performance MetricsMetricValue🎯 Accuracy98% (at 0.27 similarity threshold)⚡ Avg. Latency (Local)3.5s🌐 Avg. Latency (Web Fallback)7.8s📚 Vectorized Chunks3,237 legal segments🔍 Search MethodsHybrid (BM25 + Cosine)📸 Screenshots🏠 Home Page💬 Chat Interface🛡️ Admin Dashboard(Add your image links here)🗂️ Project StructurePlaintextpak-justice-ai/
+├── 📁 frontend/          # React.js application
+│   ├── src/
+│   ├── public/
+│   └── package.json
+├── 📁 server/            # Node.js backend
+│   ├── routes/
+│   ├── models/
+│   └── package.json
+├── 📁 chatbot/           # Python FastAPI engine
+│   ├── main.py
+│   ├── rag_pipeline.py
+│   └── requirements.txt
+└── README.md
+👨‍💻 DeveloperMuhammad Mahad | Computer Science Student | KFUEIT📜 LicenseThis project is developed for academic purposes as a Final Year Project (FYP).🙏 AcknowledgmentsKFUEIT for academic supportLangChain for RAG frameworkGoogle Gemini and Meta Llama for AI modelsSerper API for web search integration
 git clone [https://github.com/yourusername/pak-justice-ai.git](https://github.com/yourusername/pak-justice-ai.git)
 cd pak-justice-ai
