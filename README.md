@@ -101,5 +101,95 @@ Before running the project, ensure you have:
 ### 1️⃣ Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/pak-justice-ai.git
+git clone [https://github.com/yourusername/pak-justice-ai.git](https://github.com/yourusername/pak-justice-ai.git)
 cd pak-justice-ai
+2️⃣ Environment Configuration
+Create .env files in both server and chatbot folders:
+
+📁 server/.env
+MONGO_URI=your_mongodb_uri
+PORT=5000
+NODE_ENV=development
+📁 chatbot/.env
+GEMINI_API_KEY=your_gemini_key
+LLAMA_API_KEY=your_llama_key
+SERPER_API_KEY=your_serper_key
+CHROMA_DB_PATH=./chroma_db
+🏃 How to Run the Project
+Note: You need three separate terminals running simultaneously for the complete system to work.
+
+🖥️ Terminal 1: MongoDB Web Server (Node.js)
+This server manages the admin panel, authentication, and blog posts.
+cd server
+npm install
+npm run dev
+✅ Status: Manages admin panel, authentication, and blog posts
+
+🤖 Terminal 2: Chatbot AI Engine (FastAPI)
+This engine handles the RAG logic, embeddings, and LLM responses.
+cd chatbot
+
+# Activate virtual environment
+# Windows:
+venv\Scripts\activate
+# Mac/Linux:
+source venv/bin/activate
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Start AI engine
+python main.py
+✅ Status: Handles RAG logic, embeddings, and LLM responses
+
+🌐 Terminal 3: Frontend (React.js)
+This is the main user interface
+cd frontend
+npm install
+npm run dev
+✅ Status: User interface accessible at http://localhost:5173
+
+📊 Performance Metrics
+Metric,Value
+🎯 Accuracy,98% (at 0.27 similarity threshold)
+⚡ Avg. Latency (Local),3.5s
+🌐 Avg. Latency (Web Fallback),7.8s
+📚 Vectorized Chunks,"3,237 legal segments"
+🔍 Search Methods,Hybrid (BM25 + Cosine)
+📸 Screenshots
+🏠 Home Page
+
+💬 Chat Interface
+
+🛡️ Admin Dashboard
+
+(Add your image links here)
+
+🗂️ Project Structure
+pak-justice-ai/
+├── 📁 frontend/          # React.js application
+│   ├── src/
+│   ├── public/
+│   └── package.json
+├── 📁 server/            # Node.js backend
+│   ├── routes/
+│   ├── models/
+│   └── package.json
+├── 📁 chatbot/           # Python FastAPI engine
+│   ├── main.py
+│   ├── rag_pipeline.py
+│   └── requirements.txt
+└── README.md
+👨‍💻 Developer
+Muhammad Mahad Computer Science Student | KFUEIT
+
+📜 License
+This project is developed for academic purposes as a Final Year Project (FYP).
+🙏 Acknowledgments
+KFUEIT for academic support
+
+LangChain for RAG framework
+
+Google Gemini and Meta Llama for AI models
+
+Serper API for web search integration
